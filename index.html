@@ -132,6 +132,22 @@ figcaption strong{color:var(--ink-soft);font-weight:500}
 }
 .sample-link:hover{filter:brightness(1.08)}
 
+/* ---------- recurring workflow case study ---------- */
+.workflow-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;
+}
+.workflow-grid figure{
+  background:var(--panel);border:1px solid var(--rule);border-radius:12px;
+  padding:12px;box-shadow:var(--shadow);overflow:hidden;
+}
+.workflow-grid img{display:block;width:100%;height:auto;border-radius:6px}
+.workflow-grid figcaption{margin:11px 4px 3px;font-size:13.5px}
+.workflow-grid .wide{grid-column:1/-1}
+.case-note{
+  margin:18px 0 0;padding:16px 18px;border-left:3px solid var(--source);
+  background:var(--panel-2);color:var(--ink-soft);font-size:14px;
+}
+
 /* ---------- rules list ---------- */
 .rules{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
@@ -172,6 +188,8 @@ footer p{margin:0 0 8px;max-width:52em}
   .wrap{padding:0 20px}
   section{margin-bottom:56px}
   .sample-card{grid-template-columns:1fr;padding:24px}
+  .workflow-grid{grid-template-columns:1fr}
+  .workflow-grid .wide{grid-column:auto}
 }
 @media (prefers-reduced-motion:no-preference){
   html{scroll-behavior:smooth}
@@ -234,6 +252,38 @@ footer p{margin:0 0 8px;max-width:52em}
       <p>The workbook shows the exact delivery format: clean rows, clear source references, and a stated limitation instead of an invented claim about automation.</p>
     </div>
     <a class="sample-link" href="grant-awards-pdf-extraction-sample.xlsx">Download .xlsx</a>
+  </div>
+</section>
+
+<section>
+  <h2>A recurring register, not another one-off conversion</h2>
+  <p class="sec-sub">This two-period demonstration shows what happens after the next batch
+  arrives: append it to the register, reconcile totals, identify new and changed records,
+  preserve the source trail, and isolate anything that needs a decision.</p>
+  <div class="workflow-grid">
+    <figure>
+      <img src="recurring-workflow-summary.png" alt="Summary sheet showing prior and current record counts, new and changed records, exception count, and reconciled current amount.">
+      <figcaption><strong>Control summary.</strong> Counts and amounts reconcile before the file is treated as complete.</figcaption>
+    </figure>
+    <figure>
+      <img src="recurring-workflow-changes.png" alt="Change log identifying new, changed, and missing-current-period grant records with source references.">
+      <figcaption><strong>Period changes.</strong> New, changed, and missing-current-period records are separated for review.</figcaption>
+    </figure>
+    <figure class="wide">
+      <img src="recurring-workflow-exceptions.png" alt="Exception report showing a conflicting duplicate amount, a missing award date, and a record absent from the current period.">
+      <figcaption><strong>Fail-closed exceptions.</strong> Conflicting or missing values stay blank or flagged instead of being guessed.</figcaption>
+    </figure>
+  </div>
+  <p class="case-note"><strong>Demonstration boundary:</strong> every record and source filename in
+  this workbook is fictional and was created to exercise the workflow. It proves the delivery
+  structure and error-handling approach; it does not claim customer demand or unattended accuracy.</p>
+  <div class="sample-card" style="margin-top:18px">
+    <div>
+      <h3>Recurring grant-record workflow</h3>
+      <p>Five tabs: buyer summary, current register, change log, source data, and exceptions.
+      The workbook is designed for reviewable recurring work, not as a black-box automation claim.</p>
+    </div>
+    <a class="sample-link" href="recurring-grant-records-demo.xlsx">Download .xlsx</a>
   </div>
 </section>
 
